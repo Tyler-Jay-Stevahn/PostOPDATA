@@ -25,7 +25,7 @@ SECRET_KEY = '==mt2=vmrj3t#7pc2&uez3&7wr^fjlu=e5udfcx&t1ansmz(bz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [https://postopdata2.herokuapp.com/]
+ALLOWED_HOSTS = ['https://postopdata2.herokuapp.com/']
 
 
 # Application definition
