@@ -10,7 +10,8 @@ def landingpage(request):
 
 def home(request):
     context= {
-        "name":"Tyler"
+        "name":"Tyler",
+        "number":45
     }
     return render(request, 'home.html', context)
 
@@ -32,3 +33,6 @@ def second_page(request):
 
 def contact(request):
     return render(request, 'contacts.html')
+
+def signuppage(request):
+    return render(request, 'signup.html')
