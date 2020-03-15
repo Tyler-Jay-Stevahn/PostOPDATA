@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'test_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd9sfvg60m4mcgs',
-        'USER': 'hmtkaddpmvzihq',
-        'PASSWORD': '32053e9be16914fddb77094492892768be24e5c6661de44d2fc646e6dc6c33ef',
-        'HOST':  'ec2-184-72-235-80.compute-1.amazonaws.com',
+        'NAME': 'd13p0g0bkpor3r', 
+        'USER': 'njmivolvyzlzuy',
+        'PASSWORD': '57ae5bd78a1465930c9db72346af6228ee31d9328cb5a76ac29d6c4c485f007a',
+        'HOST':  'ec2-18-213-176-229.compute-1.amazonaws.com',
         'PORT':  '5432',
 
     }
@@ -122,6 +122,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
+
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 
 STATIC_URL = '/static/'
 
