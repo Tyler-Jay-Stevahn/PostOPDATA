@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from .models import employees 
+from django.shortcuts import render, redirect
+from .models import employees, registrationdata 
+from .forms import registration_forms
 # Create your views here.
 
 def landingpage(request):
@@ -35,4 +36,18 @@ def contact(request):
     return render(request, 'contacts.html')
 
 def signuppage(request):
-    return render(request, 'signup.html')
+
+    context = {
+        "form":registration_forms
+    }
+    return render(request, 'signup.html', context)
+
+def adduser(request):
+    form = registration_forms(request.POST)
+    if form.is_valid():
+        myregister = registrationdata(username = form.cleaned_data['username'], 
+                                    password = form.cleaned_data['password'], 
+                                    email = form.cleaned_data['email'], 
+                                    phone = form.cleaned_data['phone'])
+        myregister.save()
+        return redirect('home')
