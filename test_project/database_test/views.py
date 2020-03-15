@@ -1,12 +1,34 @@
 from django.shortcuts import render
-from django.shortcuts import HttpResponse
+from .models import employees 
 # Create your views here.
 
-def DB(request):
-    return HttpResponse('this is the latest news')
+def landingpage(request):
+    context = {
+        "greeting":"heylo"
+    }
+    return render(request, 'landingpage.html', context)
+
+def home(request):
+    context= {
+        "name":"Tyler"
+    }
+    return render(request, 'home.html', context)
+
+def datepage(request, year):
+    article_list = employees.objects.filter(pub_date__year = year)
+    context = {
+        "year": year,
+        "article_list" : article_list
+    }
+    return render(request, 'datepage.html', context)
 
 def second_page(request):
-    return HttpResponse('this is also the latest new news')
+    obj = employees.objects.get(id=1)
+    context={
+        "data":obj
+    }
+
+    return render(request, 'second_page.html', context)
 
 def contact(request):
-    return HttpResponse('this is contact page')
+    return render(request, 'contacts.html')
