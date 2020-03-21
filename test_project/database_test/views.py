@@ -47,8 +47,6 @@ def signuppage(request):
         "form":registration_forms
     }
 
-    to_dataframe(registration_forms)
-
     return render(request, 'signup.html', context)
 
 
