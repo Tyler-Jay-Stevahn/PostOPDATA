@@ -8,5 +8,5 @@ urlpatterns = [
     path('date/<int:year>/', datepage, name='datepage'),
     path('signup/', signuppage, name='signuppage'),
     path('adduser/', adduser, name='adduser'),
-    path('/', landingpage, name='landingpage')
+    path('', landingpage, name='landingpage')
 ]
